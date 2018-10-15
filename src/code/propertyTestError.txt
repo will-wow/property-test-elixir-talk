@@ -1,0 +1,11 @@
+3) best price
+    best sell price is better than all other prices:
+
+  AssertionError: Failed after 7 tests and 105 shrinks. rngState: 8353c174a9f6d8e20b; Counterexample: {buy: [], sell: [{id: "8", userId: "j", limitPrice: 7.036485369371626e-7, quantity: 5.626046513107497e-7}, {id: "t", userId: "N", limitPrice: 0.000001056856145043028, quantity: 9.740631971566494e-7}]}; Exception: expected 0.000001056856145043028 to be at most 7.036485369371626e-7
+  + expected - actual
+
+  -0.000001056856145043028
+  +7.036485369371626e-7
+
+  at test/order-book.spec.ts:96:43
+  at test/order-book.spec.ts:95:9

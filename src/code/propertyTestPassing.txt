@@ -1,0 +1,2 @@
+✓ best sell price is better than all other prices
+✓ best buy price is better than all other prices
