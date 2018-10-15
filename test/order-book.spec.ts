@@ -107,11 +107,11 @@ describe("best price", () => {
       const bestPrice = findBestPrice(orderBook, orderType);
 
       _.forEach(orderBook[orderType], (order: Order) => {
-        if (orderType === "sell") {
+        if (orderType === "buy") {
           expect(order.limitPrice <= bestPrice);
         }
 
-        if (orderType === "buy") {
+        if (orderType === "sell") {
           expect(order.limitPrice >= bestPrice);
         }
       });
