@@ -14,9 +14,9 @@ import {
 
 import NoteList from "../elements/NoteList";
 
-import exampleAdditionExamples from "../code/exampleAdditionExamples";
-import exampleAdditionProperties from "../code/exampleAdditionProperties";
-import propertyAdditionCommutative from "../code/propertyAdditionCommutative";
+import exampleAdditionExamples from "../code/exampleAdditionExamples.ex";
+import exampleAdditionProperties from "../code/exampleAdditionProperties.ex";
+import propertyAdditionCommutative from "../code/propertyAdditionCommutative.ex";
 
 export default (
   <SlideSet>
@@ -31,7 +31,7 @@ export default (
         Making robots find edge cases
       </Heading>
       <Heading fit size={3} margin="1rem 0">
-        Intro to Property-Based Testing
+        Intro to Property-Based Testing with StreamData
       </Heading>
       <Text fit>
         Will Ockelmann-Wagner | @WowItsWillWow | wow@carbonfive.com
@@ -97,7 +97,7 @@ export default (
 
       <CodePane
         textSize="2rem"
-        lang="javascript"
+        lang="elixir"
         source={exampleAdditionExamples}
       />
 
@@ -120,13 +120,13 @@ export default (
 
       <List>
         <ListItem>
-          Commutative: <S type="bold">a + b = b + a</S>
+          Commutative: <S type="bold">a + b == b + a</S>
         </ListItem>
         <ListItem>
-          Associative: <S type="bold">(a + b) + c = a + (b + c)</S>
+          Associative: <S type="bold">(a + b) + c == a + (b + c)</S>
         </ListItem>
         <ListItem>
-          Identity: <S type="bold">a + 0 = a</S>
+          Identity: <S type="bold">a + 0 == a</S>
         </ListItem>
       </List>
 
@@ -147,14 +147,14 @@ export default (
 
       <CodePane
         textSize="2rem"
-        lang="javascript"
+        lang="elixir"
         source={exampleAdditionProperties}
       />
 
       <NoteList
         notes={[
           "And here they are, example-based tests for the properties",
-          "so now addition DEFINITLY works in JS",
+          "so now addition DEFINITELY works in Elixir",
           "but what about floats? Is plus going to crash on 1.5?",
           "in this case, no, BUT"
         ]}
@@ -223,7 +223,7 @@ export default (
       <NoteList
         notes={[
           "Comes from Haskell, but implemented in most languages",
-          "today we're talking about JsVerify"
+          "today we're talking about StreamData"
         ]}
       />
     </Slide>
@@ -235,7 +235,7 @@ export default (
 
       <CodePane
         textSize="2rem"
-        lang="javascript"
+        lang="elixir"
         source={propertyAdditionCommutative}
       />
 
@@ -244,11 +244,12 @@ export default (
           "same test of the commutative property",
           "example test at top, property test on bottom",
           "break this down a little",
-          "JsVerify based on Crockford's JsCheck, import is called jsc in the docs",
-          "jsc has a 'property' method that works like 'it' or 'test'",
-          "takes name, generators, body",
-          "property holds true in all cases, not just one",
-          "will try 0, 1 million, negative 0.0001, etc"
+          "property function is like test",
+          "check all is a macro combo imported from use ExUnitProperties",
+          "generate a couple numbers",
+          "assert property holds true in all cases, not just one",
+          "will try 0, 1 million, negative 0.0001, etc",
+          "note this works inside a normal ex_unit file"
         ]}
       />
     </Slide>
