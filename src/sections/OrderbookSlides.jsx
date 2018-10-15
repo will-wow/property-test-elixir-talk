@@ -13,7 +13,7 @@ import {
 
 import NoteList from "../elements/NoteList";
 
-import orderBookTypes from "../code/orderBookTypes.ts";
+import orderBookTypes from "../code/orderBookTypes.ex";
 import generatorOrder from "../code/generatorOrder.js";
 import generatorPositiveNumber from "../code/generatorPositiveNumber.js";
 import generatorOrderBook from "../code/generatorOrderBook.js";
@@ -35,7 +35,7 @@ export default (
         notes={[
           "To see how property testing works in real world",
           "look at an example based on real",
-          "not actual code or even language",
+          "not actual code",
           "doing something similar, using property testing"
         ]}
       />
@@ -67,12 +67,12 @@ export default (
         notes={[
           "no getting away from types",
           "comes from haskell-land",
-          "if no type system, still have to think about shape of structures",
+          "elixir structs mean thinking types already",
+          "conceptually a little easier with typed keys",
           "in this simple orderbook:",
           "order can be buy or sell",
-          "it has an id, a user, a price, and a quantity to or sell at that price",
-          "an orderbook is a list of buys and sells",
-          "JsVerify works great with TS, but we'll stick with JS for the rest of the talk"
+          "order has an id, a user, a price, and a quantity to or sell at that price",
+          "an orderbook is a list of buys and sells"
         ]}
       />
     </Slide>

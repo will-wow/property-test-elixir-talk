@@ -1,10 +1,10 @@
 defmodule PT.Orderbook do
-  @type order_type :: :buy | :sell
-
   alias __MODULE__
   alias PT.Order
 
   defstruct [:buy, :sell]
+
+  @type order_type :: :buy | :sell
 
   @type t :: %Orderbook{
           buy: [Order.t()],
