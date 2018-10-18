@@ -1,6 +1,6 @@
 @orderbook %Orderbook{
-  buy: [@low_buy_order, @high_buy_order],
-  sell: [@high_sell_order, @low_sell_order]
+  buy: [@high_buy_order, @low_buy_order],
+  sell: [@low_sell_order, @high_sell_order]
 }
 
 test "finds low price for sells" do

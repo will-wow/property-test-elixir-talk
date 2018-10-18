@@ -112,7 +112,10 @@ export default (
           "check that FOR EVERY sell order in the orderbook, the price is as good or worse",
           "run similar test for buy orders",
           "not as mathematical, but valid property",
-          "annoying implementation detail: return true b/c expect throw error"
+          "hard part of property testing: coming up with a property that isn't just re-implementing the function",
+          "just sorting and getting the head would be too close",
+          "this isn't checking the price is right, it's checking that no price is better",
+          "okay let's run it"
         ]}
       />
     </Slide>

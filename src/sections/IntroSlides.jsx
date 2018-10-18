@@ -156,7 +156,7 @@ export default (
           "And here they are, example-based tests for the properties",
           "so now addition DEFINITELY works in Elixir",
           "but what about floats? Is plus going to crash on 1.5?",
-          "in this case, no, BUT"
+          "well even if it did, that's okay, because erlang crash tolerance, BUT"
         ]}
       />
     </Slide>
