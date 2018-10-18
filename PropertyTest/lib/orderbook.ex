@@ -11,6 +11,26 @@ defmodule PT.Orderbook do
           sell: [Order.t()]
         }
 
+  @spec naive_find_best_price(t, order_type) :: {:ok, number} | {:error, :no_match}
+  def naive_find_best_price(order_book, order_type) do
+    price =
+      order_book
+      |> Map.fetch!(order_type)
+      |> hd()
+      |> Map.fetch!(:limit_price)
+
+    {:ok, price}
+  end
+
+  @spec safe_naive_find_best_price(t, order_type) :: {:ok, number} | {:error, :no_match}
+  def safe_naive_find_best_price(order_book, order_type) do
+    case order_book
+         |> Map.fetch!(order_type) do
+      [] -> {:error, :no_match}
+      [%Order{limit_price: limit_price} | _] -> {:ok, limit_price}
+    end
+  end
+
   @spec find_best_price(t, order_type) :: {:ok, number} | {:error, :no_match}
   def find_best_price(order_book, order_type) do
     case order_type do

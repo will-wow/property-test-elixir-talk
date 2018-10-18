@@ -1,0 +1,6 @@
+1) property best price is better than all other prices (PT.OrderbookTest)
+  test/orderbook_test.exs:68
+  ** (ExUnitProperties.Error) failed with generated values (after 0 successful runs):
+
+      * Clause:    orderbook <- Generators.orderbook_generator()
+        Generated: %PT.Orderbook{buy: [], sell: []}

@@ -39,7 +39,7 @@ defmodule Test.Support.Generators do
 
   @spec id_generator() :: StreamData.t(String.t())
   def id_generator() do
-    StreamData.binary()
+    StreamData.string(:ascii, min_length: 1)
   end
 
   @spec non_negative_number_generator() :: StreamData.t(float)
@@ -50,7 +50,7 @@ defmodule Test.Support.Generators do
   @spec positive_number_generator() :: StreamData.t(float)
   def positive_number_generator() do
     non_negative_number_generator()
-    |> StreamData.filter(fn n -> n > 0 end)
+    |> StreamData.filter(fn n -> n != 0 end)
   end
 
   @spec order_type_generator() :: generator(Orderbook.order_type())

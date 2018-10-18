@@ -1,0 +1,12 @@
+Failed with generated values (after 3 successful runs):
+
+  * Clause:    orderbook <- Generators.orderbook_generator()
+    Generated: %PT.Orderbook{buy: [], sell: [%PT.Order{id: "deu", limit_price: 6.4375, quantity: 1.5, user_id: "gPq"}, %PT.Order{id: "]D%#", limit_price: 0.5, quantity: 13.625, user_id: "I8"}]}
+
+  * Clause:    order_type <- Generators.order_type_generator()
+    Generated: :sell
+
+Assertion with >= failed
+code:  assert order.limit_price() >= best_price
+left:  0.5
+right: 6.4375

@@ -1,2 +1,7 @@
-✓ best sell price is better than all other prices
-✓ best buy price is better than all other prices
+$ mix test
+............
+
+Finished in 2.1 seconds
+4 properties, 8 tests, 0 failures
+
+Randomized with seed 228569

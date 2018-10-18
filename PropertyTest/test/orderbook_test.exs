@@ -35,9 +35,18 @@ defmodule PT.OrderbookTest do
   }
 
   @orderbook %Orderbook{
-    buy: [@low_buy_order, @high_buy_order],
+    buy: [@high_buy_order, @low_buy_order],
     sell: [@low_sell_order, @high_sell_order]
   }
+
+  test "naive finds low price for sells" do
+    assert Orderbook.naive_find_best_price(@orderbook, :buy) == {:ok, @high_buy_order.limit_price}
+  end
+
+  test "naive finds high price for buys" do
+    assert Orderbook.naive_find_best_price(@orderbook, :sell) ==
+             {:ok, @low_sell_order.limit_price}
+  end
 
   test "finds low price for sells" do
     assert Orderbook.find_best_price(@orderbook, :buy) == {:ok, @high_buy_order.limit_price}
@@ -59,11 +68,7 @@ defmodule PT.OrderbookTest do
   property "best price is better than all other prices" do
     check all orderbook <- Generators.orderbook_generator(),
               order_type <- Generators.order_type_generator() do
-      best_price =
-        case Orderbook.find_best_price(orderbook, order_type) do
-          {:ok, price} -> price
-          {:error, _} -> nil
-        end
+      {_, best_price} = Orderbook.find_best_price(orderbook, order_type)
 
       orderbook
       |> Map.fetch!(order_type)

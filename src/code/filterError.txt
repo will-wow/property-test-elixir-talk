@@ -1,0 +1,1 @@
+** (StreamData.FilterTooNarrowError) too many consecutive elements (25 elements in this case) were filtered out.
