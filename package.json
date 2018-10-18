@@ -16,7 +16,7 @@
   "scripts": {
     "start": "yarn react-app-rewired start",
     "build": "yarn react-app-rewired build",
-    "deploy": "surge -p ./build --domain property-testing-talk.surge.sh",
+    "deploy": "surge -p ./build --domain property-testing-elixir-talk.surge.sh",
     "test": "mocha -r ts-node/register test/**/*.spec.ts",
     "format": "yarn format-eslint && yarn format-tslint && yarn format-prettier",
     "format-eslint": "eslint --fix **/*.{js,jsx}",
